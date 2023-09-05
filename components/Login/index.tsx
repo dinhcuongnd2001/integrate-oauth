@@ -2,9 +2,6 @@ import { Provider } from "@/constants";
 import { handleLoginWithMediaSocial } from "@/services";
 
 const Login = () => {
-  const handleClickLogin = (type: Provider) => {
-    handleLoginWithMediaSocial(type);
-  };
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -103,7 +100,7 @@ const Login = () => {
       <div className="grid grid-cols-3 items-center justify-center gap-4 ">
         <button
           type="button"
-          onClick={() => handleLoginWithMediaSocial(Provider.FACEBOOK)}
+          // onClick={() => handleLoginWithMediaSocial(Provider.FACEBOOK)}
           className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2"
         >
           <svg
@@ -121,6 +118,7 @@ const Login = () => {
           </svg>
           Sign in with Facebook
         </button>
+
         <button
           type="button"
           className="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 mr-2 mb-2"

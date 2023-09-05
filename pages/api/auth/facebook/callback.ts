@@ -4,9 +4,11 @@ import passport from "passport";
 
 const router = createRouter<NextApiRequest, NextApiResponse>();
 
-router.get((req, res) => {
-  return res.status(200).json({ message: "successfully" });
-});
+router
+  .use(passport.authenticate("facebook", { failureRedirect: "/" }))
+  .get((req, res) => {
+    return res.status(200).json({ message: "successfully" });
+  });
 
 export default router.handler({
   onError: (err, req, res) => {
